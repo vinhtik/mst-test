@@ -32,6 +32,7 @@ video {
     z-index: 1;
     box-sizing: border-box;
     border: 1.8rem solid black;
+    border-bottom: 1rem solid black;
 }
 
 
@@ -87,29 +88,34 @@ video {
 @media (max-width: 1400px) {
     .block{
         border: 1.5rem solid black;
+        border-bottom: 1rem solid black;
     }
 }
 
 @media (max-width: 1150px) {
     .block{
         border: 1.2rem solid black;
+        border-bottom: 1rem solid black;
     }
 }
 
 @media (max-width: 900px) {
     .block{
         border: 1rem solid black;
+        border-bottom: 0.8rem solid black;
     }
 }
 
 @media (max-width: 700px) {
     .block{
         border: 0.8rem solid black;
+        border-bottom: 0.5rem solid black;
     }
 }
 
 @media (max-width: 480px) {
     .block{
         border: 0.5rem solid black;
+        border-bottom: 0.3rem solid black;
     }
 }
