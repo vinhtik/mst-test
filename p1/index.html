@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <main>
+    <section class="first-display-background">
     <header>
         <a href="#" class="logo">LOREM</a>
         <nav>
@@ -16,9 +18,8 @@
             <a href="#">PAGES</a>
         </nav>
     </header>
-    <main>
+   
     <section class="first-display">
-        <img class="image" src="./assets/1.png" alt="first cottage">
         <div class="container">
             <h1>Lorem ipsum dolor sit amet</h1>
             <h2>sed do eiusmod tempor</h2>
@@ -28,6 +29,7 @@
             <button class="btn btn_order">ORDER</button>
         </div>
     </section>
+</section>
     <section class="second-display">
         <img class="second-image" src="./assets/2.png">
         <div class="sec-wrapper">
@@ -60,13 +62,13 @@
                 sed do eiusmod </h2>
             <form action="" class="form">
                 <div class="field form__field">
-                    <input type="form-name" class="field__input" placeholder="Name">
+                    <input name="fname" type="form-name" class="field__input" placeholder="Name">
                 </div>
                 <div class="field form__field">
-                    <input type="form-email" class="field__input" placeholder="E-mail">
+                    <input name="email" type="form-email" class="field__input" placeholder="E-mail">
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="privacy" class="checkbox">
+                    <input name="privacy" type="checkbox" id="privacy" class="checkbox">
                     <label for="privacy">I accept Privacy policy</label><br>
             </div>
                 <button class="btn submit">SUBMIT FORM</button>
@@ -104,4 +106,5 @@
     </footer>
 </main>
 </body>
+<script src="main.js"></script>
 </html>
