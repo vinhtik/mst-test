@@ -9,6 +9,9 @@
 body{
     background-color: #222222;
     color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header{
@@ -23,7 +26,7 @@ header{
     padding-top: 1rem;
     width: 50%;
     flex-shrink: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 header.full-width{
@@ -57,6 +60,7 @@ a{
     font-size: 1rem;
     color: #fff;
     font-style: italic;
+    text-wrap: nowrap;
 }
 
 h1{
@@ -777,7 +781,7 @@ input[type="checkbox"]:disabled{
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         padding-bottom: 1rem;
     }
 
@@ -883,6 +887,10 @@ input[type="checkbox"]:disabled{
 }
 
 @media (max-width: 610px){
+    main {
+       width: 100%;
+    }
+
     header{
         flex-wrap: nowrap;
     }
@@ -925,6 +933,7 @@ input[type="checkbox"]:disabled{
     .third__container{
         height: 100%;
         width: 95%;
+        width: 100%;
     }
     
     .third__container .third__wrapper{
