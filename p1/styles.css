@@ -6,6 +6,10 @@
     font-display: swap;
 }
 
+main{
+    width: 100%;
+}
+
 body{
     background-color: #222222;
     color: #fff;
@@ -888,7 +892,7 @@ input[type="checkbox"]:disabled{
 
 @media (max-width: 610px){
     main {
-       width: 100%;
+       overflow: hidden;
     }
 
     header{
@@ -980,6 +984,10 @@ input[type="checkbox"]:disabled{
 @media (max-width: 530px){
     header{
         flex-wrap: nowrap;
+    }
+
+    main{
+        overflow: hidden;
     }
 
     .container{
