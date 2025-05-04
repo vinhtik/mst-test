@@ -11,9 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    if (window.innerWidth < 530) {
+    let sliderControls, slideInterval;
+
+    function initSlider() {
+        if (sliderControls) {
+            sliderControls.remove();
+            clearInterval(slideInterval);
+        }
+
+        if (window.innerWidth >= 530) return;
+
         const slider = document.querySelector('.second-display');
         const images = document.querySelectorAll('.second-image');
+        if (images.length < 2) return;
+
+        sliderControls = document.createElement('div');
+        sliderControls.className = 'slider-controls-container';
+        
         const prevBtn = document.createElement('button');
         prevBtn.className = 'slider-btn prev-btn';
         prevBtn.innerHTML = '❮';
@@ -25,21 +39,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const dotsContainer = document.createElement('div');
         dotsContainer.className = 'slider-dots';
 
-        slider.appendChild(prevBtn);
-        slider.appendChild(nextBtn);
-        slider.appendChild(dotsContainer);
+        sliderControls.appendChild(prevBtn);
+        sliderControls.appendChild(nextBtn);
+        sliderControls.appendChild(dotsContainer);
+        slider.appendChild(sliderControls);
+
+        let currentIndex = 0;
+        const dots = [];
 
         images.forEach((_, i) => {
             const dot = document.createElement('span');
             dot.className = 'slider-dot';
             dot.dataset.index = i;
             dotsContainer.appendChild(dot);
+            dots.push(dot);
         });
-
-        const dots = document.querySelectorAll('.slider-dot');
-        let currentIndex = 0;
-
-        showSlide(currentIndex);
 
         function showSlide(index) {
             images.forEach(img => img.classList.remove('active'));
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        let slideInterval = setInterval(() => {
+        slideInterval = setInterval(() => {
             const newIndex = (currentIndex + 1) % images.length;
             showSlide(newIndex);
         }, 5000);
@@ -79,5 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSlide(newIndex);
             }, 5000);
         });
+
+        showSlide(0);
     }
+    initSlider();
+
+    window.addEventListener('resize', function() {
+        initSlider();
+    });
 });
