@@ -305,7 +305,7 @@ input[type="checkbox"]:disabled{
     align-items: baseline;
     margin: 3rem;
     font-size: 1.25rem;
-    margin-left: 7rem;
+    margin-left: 3%;
 }
 
 .wrapper-link{
